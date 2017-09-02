@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    link(href="css/main.css", rel="stylesheet")
+
+  body
+    main.main
+      .title-container
+        each val in ['led-2017', 'led-taipei', 'led-fisu']
+          .display-panel(data-type=val)
+      each val in ['fencing', 'baseball', 'archery', 'football', 'athletics', 'artistic-gymnastics', 'badminton', 'swimming', 'volleyball', 'weightlifting', 'billiards', 'table-tennis', 'roller-sports', 'wushu', 'water-polo', 'basketball', 'golf', 'judo', 'taekwondo', 'tennis', 'rhythmic-gymnastics', 'diving', 'fisu-flag']
+        .display-panel(data-type=val)
+    script(src="js/main.js")

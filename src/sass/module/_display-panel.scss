@@ -1,0 +1,97 @@
+@function enumerate($array) {
+  @return zip(range(length($array)), $array);
+}
+
+@function to-led($array) {
+  $color_arr: ($c-led, $c-primary, $c-white, $c-red, $c-yellow, $c-blue);
+  $new_array: ();
+  @for $j from 1 through length($array) {
+    $row: nth($array, $j);
+    $sub_array: ();
+    @for $i from 1 through length($row) {
+      $x: nth($row, $i);
+      $x: #{$i*10}px #{$j*10}px 0 #{nth($color_arr, $x + 1)}; // Add comma if not the last item of list
+      @if ($i !=length($row)) {
+        $x: $x unquote(',');
+      }
+      $sub_array: append($sub_array, $x);
+    }
+    @if ($j !=length($array)) {
+      // Add comma if not the last item of list
+      $sub_array: $sub_array unquote(',');
+    }
+    $new_array: append($new_array, $sub_array);
+  }
+  @return $new_array;
+}
+
+.main {
+  width: 100%;
+  max-width: 1680px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  margin: auto;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.display-panel {
+  $sport-map: ('led-2017': $led-2017, 'led-taipei': $led-taipei, 'led-fisu': $led-fisu, 'fencing': $fencing, 'baseball': $baseball, 'archery': $archery, 'football': $football, 'athletics': $athletics, 'artistic-gymnastics': $artistic-gymnastics, 'badminton': $badminton, 'swimming': $swimming, 'volleyball': $volleyball, 'weightlifting': $weightlifting, 'billiards': $billiards, 'table-tennis': $table-tennis, 'roller-sports': $roller-sports, 'wushu': $wushu, 'water-polo': $water-polo, 'basketball': $basketball, 'golf': $golf, 'judo': $judo, 'taekwondo': $taekwondo, 'tennis': $tennis, 'rhythmic-gymnastics': $rhythmic-gymnastics, 'diving': $diving, 'fisu-flag': $fisu-flag);
+  display: inline-block;
+  position: relative;
+  flex-basis: 160px;
+  height: 150px;
+  border: 1px solid transparent;
+  margin: 25px;
+  @media (min-width: 1680px) {
+    margin: 40px;
+  }
+  &[data-type="led-2017"] {
+    flex-basis: 300px;
+    height: 130px;
+    margin: 0;
+  }
+  &[data-type="led-taipei"] {
+    flex-basis: 440px;
+    height: 130px;
+    margin: 0;
+  }
+  &[data-type="led-fisu"] {
+    flex-basis: 830px;
+    height: 130px;
+    margin: 0;
+  }
+  &[data-type="fisu-flag"] {
+    flex-basis: 450px;
+    height: 120px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: -9px;
+    right: 0;
+    left: -9px;
+    bottom: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  @each $name,
+  $value in $sport-map {
+    &[data-type="#{$name}"] {
+      &:after {
+        box-shadow: to-led($value);
+      }
+      &:hover:after {
+        animation: $name 1s infinite;
+      }
+    }
+  }
+}
