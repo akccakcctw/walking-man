@@ -1,6 +1,6 @@
 
 @import 'variable';
-@import 'sports';
+@import 'sports/all';
 
 // fonts
 @import 'font';
@@ -10,6 +10,7 @@
 
 // mixins
 @import 'mixin/breakpoint';
+@import 'mixin/custom-funcs';
 
 // default skin
 @import 'base';
@@ -17,3 +18,4 @@
 // modules
 @import 'module/display-panel';
 @import 'sports/fencing';
+@import 'sports/baseball';

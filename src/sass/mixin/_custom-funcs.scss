@@ -1,0 +1,26 @@
+@function enumerate($array) {
+  @return zip(range(length($array)), $array);
+}
+
+@function to-led($array) {
+  $color_arr: ($c-led, $c-primary, $c-white, $c-red, $c-yellow, $c-blue);
+  $new_array: ();
+  @for $j from 1 through length($array) {
+    $row: nth($array, $j);
+    $sub_array: ();
+    @for $i from 1 through length($row) {
+      $x: nth($row, $i);
+      $x: #{$i*10}px #{$j*10}px 0 #{nth($color_arr, $x + 1)}; // Add comma if not the last item of list
+      @if ($i !=length($row)) {
+        $x: $x unquote(',');
+      }
+      $sub_array: append($sub_array, $x);
+    }
+    @if ($j !=length($array)) {
+      // Add comma if not the last item of list
+      $sub_array: $sub_array unquote(',');
+    }
+    $new_array: append($new_array, $sub_array);
+  }
+  @return $new_array;
+}
