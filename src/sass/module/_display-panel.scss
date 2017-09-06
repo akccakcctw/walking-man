@@ -66,5 +66,12 @@
         animation: $name 1s infinite;
       }
     }
+    @if ($name==fisu-flag) {
+      &[data-type="#{$name}"] {
+        &:hover:after {
+          animation: $name 5s infinite;
+        }
+      }
+    }
   }
 }
