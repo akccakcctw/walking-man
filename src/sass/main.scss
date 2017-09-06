@@ -1,41 +1,36 @@
-
 @import 'variable';
-@import 'sports/all';
-
 // fonts
 @import 'font';
-
 // vendors
 @import 'vendor/normalize-scss/normalize';
-
 // mixins
 @import 'mixin/breakpoint';
 @import 'mixin/custom-funcs';
-
 // default skin
 @import 'base';
-
+// anims
+@import 'animations/all';
+@import 'animations/fencing';
+@import 'animations/baseball';
+@import 'animations/archery';
+@import 'animations/football';
+@import 'animations/athletics';
+@import 'animations/artistic-gymnastics';
+@import 'animations/badminton';
+@import 'animations/swimming';
+@import 'animations/volleyball';
+@import 'animations/weightlifting';
+@import 'animations/billiards';
+@import 'animations/table-tennis';
+@import 'animations/roller-sports';
+@import 'animations/wushu';
+@import 'animations/water-polo';
+@import 'animations/basketball';
+@import 'animations/golf';
+@import 'animations/taekwondo';
+@import 'animations/tennis';
+@import 'animations/rhythmic-gymnastics';
+@import 'animations/diving';
+@import 'animations/judo';
 // modules
 @import 'module/display-panel';
-@import 'sports/fencing';
-@import 'sports/baseball';
-@import 'sports/archery';
-@import 'sports/football';
-@import 'sports/athletics';
-@import 'sports/artistic-gymnastics';
-@import 'sports/badminton';
-@import 'sports/swimming';
-@import 'sports/volleyball';
-@import 'sports/weightlifting';
-@import 'sports/billiards';
-@import 'sports/table-tennis';
-@import 'sports/roller-sports';
-@import 'sports/wushu';
-@import 'sports/water-polo';
-@import 'sports/basketball';
-@import 'sports/golf';
-@import 'sports/taekwondo';
-@import 'sports/tennis';
-@import 'sports/rhythmic-gymnastics';
-@import 'sports/diving';
-@import 'sports/judo';
