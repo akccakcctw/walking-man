@@ -70,7 +70,8 @@
     }
     @if ($name==fisu-flag) {
       &[data-type="#{$name}"] {
-        &:hover:after {
+        &:hover:after,
+        &.is-active:after {
           animation: $name 5s infinite;
         }
       }

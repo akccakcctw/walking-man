@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     border-bottom: 1px solid transparent;
     padding: .1rem .5rem;
   `;
+  const animSwitch = document.querySelector('#switch');
+  const sportPanels = document.querySelectorAll('.sport-panel');
+  const switchAnims = () => {
+    sportPanels.forEach(panel => panel.classList.toggle('is-active'));
+  };
+
   console.log(`%cAuthor: Rex Tsou(akccakcctw), ${myUrl}`, styleConsole);
   console.log(`%cImage Credit: ${BOHAN}, ${urlBOHAN}`, styleConsole2);
+
+  animSwitch.addEventListener('click', switchAnims);
 });

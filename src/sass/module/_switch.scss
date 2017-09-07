@@ -1,0 +1,62 @@
+.switch-container {
+  position: fixed;
+  top: 150px;
+  right: 0;
+  z-index: 999;
+  .material {
+    background: $c-blue;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+    border-radius: 10px 0 0 10px;
+    padding: 15px 0 15px 15px;
+    transform: translateX(80%);
+    transition: .5s ease-in-out;
+    &:hover,
+    &:focus {
+      transform: translateX(0);
+    }
+  }
+  .input {
+    display: none;
+    &:checked+.label {
+      >.text {
+        &.on {
+          visibility: visible;
+          opacity: 1;
+        }
+        &.off {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+      &:before {
+        content: '✔️';
+      }
+    }
+  }
+  .label {
+    position: relative;
+    padding: 1.5em 3em;
+    color: $c-white;
+    cursor: pointer;
+    >.text {
+      position: absolute;
+      left: 2.8em;
+      line-height: 1em;
+      transition: .3s ease-in-out;
+      &.on {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 1em;
+      height: 1em;
+      border: 1px solid $c-white;
+      background: $c-white;
+      margin-left: 1em;
+    }
+  }
+}

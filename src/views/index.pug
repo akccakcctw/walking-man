@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 html(lang="en")
   head
+    include partial/_head
     link(href="css/main.css", rel="stylesheet")
 
   body
     main.main
+      .switch-container
+        .material
+          input#switch.input(type="checkbox")
+          label.label(for="switch")
+            span.text.on on
+            span.text.off off
       .credit-container
         .author
           | Author:
@@ -14,7 +21,7 @@ html(lang="en")
           a(href="https://goo.gl/bkAxv1", target="_blank", rel="noopener") BOHAN Graphic Design Office
       .title-container
         each val in ['led-2017', 'led-taipei', 'led-fisu']
-          .display-panel(data-type=val)
+          .display-panel.led-panel(data-type=val)
       each val in ['fencing', 'baseball', 'archery', 'football', 'athletics', 'artistic-gymnastics', 'badminton', 'swimming', 'volleyball', 'weightlifting', 'billiards', 'table-tennis', 'roller-sports', 'wushu', 'water-polo', 'basketball', 'golf', 'judo', 'taekwondo', 'tennis', 'rhythmic-gymnastics', 'diving', 'fisu-flag']
-        .display-panel(data-type=val)
+        .display-panel.sport-panel(data-type=val)
     script(src="js/main.js")
