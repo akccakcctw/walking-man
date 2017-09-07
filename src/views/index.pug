@@ -6,8 +6,12 @@ html(lang="en")
   body
     main.main
       .credit-container
-        .author Author: Rex Tsou
-        .credit Image Credit: BOHAN Graphic Design Office
+        .author
+          | Author:
+          a(href="https://goo.gl/H9uJyX", target="_blank", rel="noopener") Rex Tsou
+        .credit
+          | Image Credit:
+          a(href="https://goo.gl/bkAxv1", target="_blank", rel="noopener") BOHAN Graphic Design Office
       .title-container
         each val in ['led-2017', 'led-taipei', 'led-fisu']
           .display-panel(data-type=val)

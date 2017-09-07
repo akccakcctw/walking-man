@@ -5,6 +5,16 @@ body {
   font-family: monospace;
 }
 
+a {
+  &:visited,
+  &:link,
+  &:hover,
+  &:active {
+    color: inherit;
+    padding: 0 .5em;
+  }
+}
+
 main {
   padding-top: 50px;
   padding-bottom: 80px;

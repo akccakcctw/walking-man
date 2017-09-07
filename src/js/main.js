@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const myUrl = 'https://akccakcctw.github.io';
+  const myUrl = 'https://goo.gl/H9uJyX';
   const BOHAN = 'BOHAN Graphic Design Office';
   const urlBOHAN = 'https://goo.gl/bkAxv1';
   const styleConsole = `
