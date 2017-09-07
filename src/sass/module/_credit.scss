@@ -1,0 +1,15 @@
+.credit-container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: $c-base;
+  color: $c-white;
+  text-align: center;
+  .author {
+    padding: .5em 1em;
+  }
+  .credit {
+    padding: .5em 1em;
+  }
+}

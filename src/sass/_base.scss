@@ -1,3 +1,11 @@
-html,body {
+html,
+body {
   background: $c-base;
+  position: relative;
+  font-family: monospace;
+}
+
+main {
+  padding-top: 50px;
+  padding-bottom: 80px;
 }
