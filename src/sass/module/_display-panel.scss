@@ -64,6 +64,7 @@
         box-shadow: to-led($value);
       }
       &:hover:after,
+      &:focus:after,
       &.is-active:after {
         animation: $name 1s infinite;
       }
