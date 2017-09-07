@@ -16,7 +16,8 @@
 }
 
 .display-panel {
-  $sport-map: ('led-2017': $led-2017, 'led-taipei': $led-taipei, 'led-fisu': $led-fisu, 'fencing': $fencing, 'baseball': $baseball, 'archery': $archery, 'football': $football, 'athletics': $athletics, 'artistic-gymnastics': $artistic-gymnastics, 'badminton': $badminton, 'swimming': $swimming, 'volleyball': $volleyball, 'weightlifting': $weightlifting, 'billiards': $billiards, 'table-tennis': $table-tennis, 'roller-sports': $roller-sports, 'wushu': $wushu, 'water-polo': $water-polo, 'basketball': $basketball, 'golf': $golf, 'judo': $judo, 'taekwondo': $taekwondo, 'tennis': $tennis, 'rhythmic-gymnastics': $rhythmic-gymnastics, 'diving': $diving, 'fisu-flag': $fisu-flag);
+  $sport-map: ('fencing': $fencing, 'baseball': $baseball, 'archery': $archery, 'football': $football, 'athletics': $athletics, 'artistic-gymnastics': $artistic-gymnastics, 'badminton': $badminton, 'swimming': $swimming, 'volleyball': $volleyball, 'weightlifting': $weightlifting, 'billiards': $billiards, 'table-tennis': $table-tennis, 'roller-sports': $roller-sports, 'wushu': $wushu, 'water-polo': $water-polo, 'basketball': $basketball, 'golf': $golf, 'judo': $judo, 'taekwondo': $taekwondo, 'tennis': $tennis, 'rhythmic-gymnastics': $rhythmic-gymnastics, 'diving': $diving, 'fisu-flag': $fisu-flag);
+  $led-map: ('led-2017': $led-2017, 'led-taipei': $led-taipei, 'led-fisu': $led-fisu);
   display: inline-block;
   position: relative;
   flex-basis: 160px;
@@ -55,7 +56,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-  }
+  } // sport-map
   @each $name,
   $value in $sport-map {
     &[data-type="#{$name}"] {
@@ -66,21 +67,36 @@
         animation: $name 1s infinite;
       }
     }
-    @if ($name==led-2017) {
-      &[data-type="#{$name}"] {
-        &:after {
-          animation: $name 5s;
-        }
-        &:hover:after {
-          animation: inherit;
-        }
-      }
-    }
     @if ($name==fisu-flag) {
       &[data-type="#{$name}"] {
         &:hover:after {
           animation: $name 5s infinite;
         }
+      }
+    }
+  } // led-map
+  @each $name,
+  $value in $led-map {
+    &[data-type="#{$name}"] {
+      pointer-events: none;
+      &:after {
+        box-shadow: to-led($value);
+      }
+    }
+    @if ($name==led-2017) {
+      &[data-type="#{$name}"]:after {
+        animation: $name 2s forwards;
+      }
+    }
+    @if ($name==led-taipei) {
+      &[data-type="#{$name}"]:after {
+        animation: $name 3s 2s forwards;
+      }
+    }
+    @if ($name==led-fisu) {
+      &[data-type="#{$name}"]:after {
+        animation: $name .6s 5s cubic-bezier(0.42, 0, 0.65, 1.36) forwards;
+        animation-iteration-count: 4;
       }
     }
   }
