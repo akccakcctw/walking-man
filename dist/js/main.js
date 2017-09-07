@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   console.log('%cAuthor: Rex Tsou(akccakcctw), ' + myUrl, styleConsole);
-  console.log('%cImage Credit: ' + BOHAN + ', ' + urlBOHAN, styleConsole2);
+  console.log('%cInspired: ' + BOHAN + ', ' + urlBOHAN, styleConsole2);
 
   animSwitch.addEventListener('click', switchAnims);
 });
