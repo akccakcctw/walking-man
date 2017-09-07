@@ -66,6 +66,16 @@
         animation: $name 1s infinite;
       }
     }
+    @if ($name==led-2017) {
+      &[data-type="#{$name}"] {
+        &:after {
+          animation: $name 5s;
+        }
+        &:hover:after {
+          animation: inherit;
+        }
+      }
+    }
     @if ($name==fisu-flag) {
       &[data-type="#{$name}"] {
         &:hover:after {
