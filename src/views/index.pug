@@ -9,12 +9,6 @@ html(lang="zh-TW")
     script
       include partial/_ga.js
     main.main
-      .switch-container
-        .material
-          input#switch.input(type="checkbox")
-          label.label(for="switch")
-            span.text.on on
-            span.text.off off
       .credit-container
         .author
           | Author:
@@ -27,4 +21,11 @@ html(lang="zh-TW")
           .display-panel.led-panel(data-type=val)
       each val in ['fencing', 'baseball', 'archery', 'football', 'athletics', 'artistic-gymnastics', 'badminton', 'swimming', 'volleyball', 'weightlifting', 'billiards', 'table-tennis', 'roller-sports', 'wushu', 'water-polo', 'basketball', 'golf', 'judo', 'taekwondo', 'tennis', 'rhythmic-gymnastics', 'diving', 'fisu-flag']
         .display-panel.sport-panel(data-type=val)
+      .switch-container
+        .material
+          input#switch.input(type="checkbox")
+          label.label(for="switch")
+            span.text.on on
+            span.text /
+            span.text.off off
     script(src="js/main.js")
