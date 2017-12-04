@@ -8,25 +8,24 @@
     "gulp": "gulp"
   },
   "author": "akccakcctw",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "*",
     "babel-preset-es2015": "*",
     "babel-register": "*",
     "browser-sync": "*",
-    "eslint": "*",
-    "eslint-config-airbnb-base": "*",
-    "eslint-plugin-import": "*",
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "*",
     "gulp-babel": "*",
     "gulp-load-plugins": "*",
-    "gulp-notify": "^2.2.0",
+    "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^3.0.0"
   }
 }
