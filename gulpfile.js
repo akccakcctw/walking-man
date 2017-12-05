@@ -11,7 +11,7 @@ gulp.task('browserSync', ['default'], () => {
     notify: false,
     port: 8000,
     server: {
-      baseDir: 'dist'
+      baseDir: 'dist',
     },
   });
 });
@@ -22,7 +22,7 @@ gulp.task('watch', ['browserSync'], () => {
   gulp.watch('src/views/**/*.pug', ['views']);
 });
 
-gulp.task('min', ['css-min', 'js-min']);
+gulp.task('min', ['css-min']);
 
 gulp.task('css', () => {
   gulp.src('src/sass/**/*.scss')
@@ -33,12 +33,11 @@ gulp.task('css', () => {
       includePath: ['.'],
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({ browsers: ['last 2 versions'] }))
-    .pipe(gulp.dest('dist/css')) // output folder
-    .pipe(browserSync.stream())
-  // .pipe($.notify("Compile Sass Complete!"))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('css-min', ()=>{
+gulp.task('css-min', () => {
   gulp.src('src/sass/**/*.scss')
     .pipe($.plumber())
     .pipe($.sass.sync({
@@ -48,33 +47,16 @@ gulp.task('css-min', ()=>{
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({ browsers: ['last 2 versions'] }))
     .pipe($.rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/css')) // output folder
+    .pipe(gulp.dest('dist/css'))
     .pipe($.notify({
       message: 'Minify Sass Complete!',
       onLast: true,
-    }))
+    }));
 });
 
 gulp.task('js', () => {
-  gulp.src('src/js/**/*.js')
-    .pipe($.plumber())
-    .pipe($.babel())
-    .pipe(gulp.dest('dist/js')) // output folder
-    .pipe(browserSync.stream())
-  // .pipe($.notify("Compile Javascript Complete!"))
-});
-
-gulp.task('js-min', () => {
-  gulp.src('src/js/**/*.js')
-    .pipe($.plumber())
-    .pipe($.babel())
-    .pipe($.uglify()) // minify
-    .pipe($.rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/js'))
-    .pipe($.notify({
-      message: 'Minify Javascript Complete!',
-      onLast: true,
-    }))
+  $.run('npm run build:js').exec()
+    .pipe(browserSync.stream());
 });
 
 gulp.task('views', () => {
@@ -83,7 +65,6 @@ gulp.task('views', () => {
     .pipe($.pug({
       pretty: true,
     }))
-    .pipe(gulp.dest('dist')) // output folder
-    .pipe(browserSync.stream())
-  // .pipe($.notify("Compile Pug Complete!"))
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 });

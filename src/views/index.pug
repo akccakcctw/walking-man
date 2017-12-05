@@ -19,8 +19,9 @@ html(lang="zh-TW")
       .title-container
         each val in ['led-2017', 'led-taipei', 'led-fisu']
           .display-panel.led-panel(data-type=val)
-      canvas.display-panel.sport-panel(width=162, height=152, data-type="archery")
-      each val in ['fencing', 'baseball', 'archery', 'football', 'athletics', 'artistic-gymnastics', 'badminton', 'swimming', 'volleyball', 'weightlifting', 'billiards', 'table-tennis', 'roller-sports', 'wushu', 'water-polo', 'basketball', 'golf', 'judo', 'taekwondo', 'tennis', 'rhythmic-gymnastics', 'diving', 'fisu-flag']
+      each val in ['archery', 'artistic_gymnastics']
+        canvas.display-panel.sport-panel(width=162, height=152, data-type=val)
+      each val in ['fencing', 'baseball', 'football', 'athletics', 'badminton', 'swimming', 'volleyball', 'weightlifting', 'billiards', 'table-tennis', 'roller-sports', 'wushu', 'water-polo', 'basketball', 'golf', 'judo', 'taekwondo', 'tennis', 'rhythmic-gymnastics', 'diving', 'fisu-flag']
         .display-panel.sport-panel(data-type=val)
       .switch-container
         .material
