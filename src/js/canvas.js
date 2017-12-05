@@ -1,4 +1,8 @@
 import * as data from '../data/index';
+
+const animSwitch = document.querySelector('#switch');
+// const sportPanels = document.querySelectorAll('.sport-panel');
+
 // configs
 const color0 = '#1B1A20'; // grey
 const color1 = '#26F046'; // green
@@ -28,6 +32,7 @@ const animIDs = {
   //   len: data.archery.length,
   //   animIndex: 0,
   // },
+  // ...
 };
 
 Object.keys(data).forEach((d) => {
@@ -107,6 +112,7 @@ function stopAnim() {
   cancelAnimationFrame(c.frame);
 }
 
+// draw each panels static
 Object.keys(animIDs).forEach((animID) => {
   nowAnimID = animID;
   drawPanel();
@@ -124,3 +130,15 @@ canvasList.forEach((canvas) => {
     stopAnim(nowAnimID);
   });
 });
+
+// animSwitch.addEventListener('click', (e) => {
+//   if (!e.currentTarget.checked) {
+//     Object.keys(animIDs).forEach(() => {
+//       console.log(nowAnimID);
+//       stopAnim(nowAnimID);
+//     });
+//   }
+//   Object.keys(animIDs).forEach(() => {
+//     startAnim(animFPS);
+//   });
+// });

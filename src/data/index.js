@@ -1,3 +1,8 @@
+// led
+import led_2017 from './led-2017';
+import led_taipei from './led-taipei';
+import led_fisu from './led-fisu';
+// sport
 import fencing from './fencing';
 import baseball from './baseball';
 import archery from './archery';
@@ -23,6 +28,9 @@ import diving from './diving';
 import fisu_flag from './fisu-flag';
 
 export {
+  led_2017,
+  led_taipei,
+  led_fisu,
   archery,
   artistic_gymnastics,
   athletics,
