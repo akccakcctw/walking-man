@@ -2,6 +2,10 @@ import * as data from '../data/index';
 // configs
 const color0 = '#1B1A20'; // grey
 const color1 = '#26F046'; // green
+const color2 = '#F9FBF6'; // white
+const color3 = '#EB007C'; // red
+const color4 = '#FFFC02'; // yellow
+const color5 = '#009ADD'; // blue
 const radius = 4;
 const animFPS = 5;
 const canvasList = document.querySelectorAll('canvas');
@@ -19,17 +23,20 @@ let then;
 let elapsed;
 
 const animIDs = {
-  archery: {
-    frame: '',
-    len: data.archery.length,
-    animIndex: 0,
-  },
-  artistic_gymnastics: {
-    frame: '',
-    len: data.artistic_gymnastics.length,
-    animIndex: 0,
-  },
+  // archery: {
+  //   frame: '',
+  //   len: data.archery.length,
+  //   animIndex: 0,
+  // },
 };
+
+Object.keys(data).forEach((d) => {
+  animIDs[d] = {
+    frame: '',
+    len: data[d].length,
+    animIndex: 0,
+  };
+});
 
 function drawBulb(x, y, r, color, ctx = ctxObj[nowAnimID]) {
   ctx.fillStyle = color;
@@ -56,7 +63,11 @@ function drawPanel({
       if (!clear) {
         dotColor = dot === 0 ? color0
           : dot === 1 ? color1
-            : color0;
+            : dot === 2 ? color2
+              : dot === 3 ? color3
+                : dot === 4 ? color4
+                  : dot === 5 ? color5
+                    : color0;
       }
       drawBulb((j * 10) - 5, (i * 10) - 5, radius, dotColor, context);
     });
