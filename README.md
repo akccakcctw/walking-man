@@ -1,31 +1,4 @@
-# walking man sample
+<h1 align="center">Walking Man</h1>
+<p align="center">for 2017 Taipei Universiade</p>
 
----
-
-## Pugass
-
-A generator base on [yeoman](http://yeoman.io/). Helps you quickly starting a new front-end project.
-
-### dependencies
-
-+ modernizr
-
-### devDependencies
-
-+ babel-core
-+ babel-preset-es2015
-+ babel-register
-+ browser-sync
-+ eslint
-+ eslint-config-airbnb-base
-+ eslint-plugin-import
-+ gulp
-+ gulp-autoprefixer
-+ gulp-babel
-+ gulp-compass
-+ gulp-load-plugins
-+ gulp-notify
-+ gulp-plumber
-+ gulp-pug
-+ gulp-rename
-+ gulp-uglify
+<p align="center"><img src="https://raw.githubusercontent.com/akccakcctw/walking-man/master/screenshot.png"></p>
